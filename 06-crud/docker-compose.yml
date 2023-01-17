@@ -1,0 +1,24 @@
+version : '3.9'
+
+services:
+  goapp:
+    build: .
+    ports: 
+      - "3000:3000"
+    links:
+      - godb
+  godb:
+    image: mysql:8.0.29
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: crudgo
+      MYSQL_USER: Testt
+      MYSQL_PASSWORD: 2022*
+
+    volumes:
+      - db-info:/var/lib/mysql
+
+
+volumes:
+  db-info: 

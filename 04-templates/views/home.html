@@ -1,0 +1,19 @@
+{{ template "head" }}
+{{ template "navbar" }}
+<body>
+    <h1> Home page {{ .User }}   </h1><hr>
+    <ul>
+        {{ range .Works }}
+            <li>  {{ .Name }} -  {{ .State }}</li>
+        {{ end }}
+    </ul>
+
+    {{ template "footer" }}  
+    <!--  
+    {{ if  .Active}}
+        <h2> Cuenta activa </h2>
+
+    {{ end }}-->
+
+</body>
+</html>
